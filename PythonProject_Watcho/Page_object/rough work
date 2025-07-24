@@ -1,0 +1,13 @@
+book = openpyxl.load_workbook("test_cases/Test_download.xlsx")
+        sheet = book.active
+
+        sheet.append(Channel_cell_text)
+
+        try:
+            sheet.append(Channel_cell_text)
+            print("✅ Data appended.")
+        except Exception as e:
+            print("❌ Append failed:", e)
+
+        book.save("test_cases/Test_download.xlsx")
+        book.close()
